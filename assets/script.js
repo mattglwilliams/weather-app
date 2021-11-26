@@ -122,13 +122,13 @@ var uvIndex = function (lat, lon) {
                 response.json().then(function (data) {
                     todaysUV.textContent = "UV Index = " + data.value
                     if (data.value < 2) {
-                        todaysUV.tribute("class", "low-uv")
+                        todaysUV.setAttribute("class", "low-uv")
                     } else if (data.value < 5) {
-                        todaysUV.tribute("class", "med-uv")
+                        todaysUV.setAttribute("class", "med-uv")
                     } else if (data.value < 7) {
-                        todaysUV.tribute("class", "high-uv")
+                        todaysUV.setAttribute("class", "high-uv")
                     } else if (data.value < 10) {
-                        todaysUV.tribute("class", "extr-uv")
+                        todaysUV.setAttribute("class", "extr-uv")
                     }
                 })
                     .catch(function (error) {
