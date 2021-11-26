@@ -101,4 +101,22 @@ var uvIndex = function (lat, lon) {
 })
 }
 
+var fetchForecast = function (city) {
+    var forecastApiURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=84c00db9e01356b453b2190ad1be323f"
+
+    fetch(forecastApiURL)
+    .then(function (response) {
+        if (response.ok) {
+            response.json().then(function (data) {
+                displayForecast(data);
+              });
+        } else {
+            alert('Error: ' + response.statusText)
+        }
+    })
+    .catch(function (error) {
+        alert('Please select a valid city');
+      });
+}
+
 submitBtn.addEventListener('click', formSubmitHandler);
