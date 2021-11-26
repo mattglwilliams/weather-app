@@ -119,4 +119,54 @@ var fetchForecast = function (city) {
       });
 }
 
+var displayForecast = function (data) {
+    console.log(data)
+    var firstDay = moment().add(1, 'd').format("DD/MM/YYYY");
+    var secondDay = moment().add(2, 'd').format("DD/MM/YYYY");
+    var thirdDay = moment().add(3, 'd').format("DD/MM/YYYY");
+    var forthDay = moment().add(4, 'd').format("DD/MM/YYYY");
+    var fifthDay = moment().add(5, 'd').format("DD/MM/YYYY");
+    forecastHeader.textContent = "5-Day Forecast:"
+    dayOne.setAttribute("class", "individual-forecast")
+    dayTwo.setAttribute("class", "individual-forecast")
+    dayThree.setAttribute("class", "individual-forecast")
+    dayFour.setAttribute("class", "individual-forecast")
+    dayFive.setAttribute("class", "individual-forecast")
+        if (data.list[6]) {
+            firstCard.textContent = firstDay
+            firstIcon.innerHTML = "<img src='http://openweathermap.org/img/w/" + data.list[6].weather[0].icon + ".png'>"
+            firstTemp.textContent = "Temp: " + data.list[6].main.temp
+            firstHumidity.textContent = "Humidity: " + data.list[6].main.humidity
+        }
+    
+        if (data.list[14]) {
+            secondCard.textContent = secondDay
+            secondIcon.innerHTML = "<img src='http://openweathermap.org/img/w/" + data.list[14].weather[0].icon + ".png'>"
+            secondTemp.textContent = "Temp: " + data.list[14].main.temp
+            secondHumidity.textContent = "Humidity: " + data.list[14].main.humidity
+        }
+    
+        if (data.list[22]) {
+            thirdCard.textContent = thirdDay
+            thirdIcon.innerHTML = "<img src='http://openweathermap.org/img/w/" + data.list[22].weather[0].icon + ".png'>"
+            thirdTemp.textContent = "Temp: " + data.list[22].main.temp
+            thirdHumidity.textContent = "Humidity: " + data.list[22].main.humidity
+        }
+    
+        if (data.list[30]) {
+            forthCard.textContent = forthDay
+            forthIcon.innerHTML = "<img src='http://openweathermap.org/img/w/" + data.list[30].weather[0].icon + ".png'>"
+            forthTemp.textContent = "Temp: " + data.list[30].main.temp
+            forthHumidity.textContent = "Humidity: " + data.list[30].main.humidity
+        }
+    
+        if (data.list[38]) {
+            fifthCard.textContent = fifthDay
+            fifthIcon.innerHTML = "<img src='http://openweathermap.org/img/w/" + data.list[38].weather[0].icon + ".png'>"
+            fifthTemp.textContent = "Temp: " + data.list[38].main.temp
+            fifthHumidity.textContent = "Humidity: " + data.list[38].main.humidity
+        }
+        
+}
+
 submitBtn.addEventListener('click', formSubmitHandler);
