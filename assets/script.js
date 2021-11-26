@@ -80,7 +80,7 @@ var displayWeather = function (data, city) {
     var humidity = data.main.humidity;
     todaysEl.setAttribute("class", "current-day")
     cityName.textContent = data.name + " - " + today
-    todaysIcon.innerHTML = "<img src='http://openweathermap.org/img/w/" + data.weather[0].icon + ".png'>"
+    todaysIcon.innerHTML = "<img src='https://openweathermap.org/img/w/" + data.weather[0].icon + ".png'>"
     todaysTemp.textContent = "Temp: " + temp;
     todaysWind.textContent = "Wind Speed: " + wind;
     todaysHumidity.textContent = "Humidity: " + humidity;
@@ -136,35 +136,35 @@ var displayForecast = function (data) {
     dayFive.setAttribute("class", "individual-forecast")
         if (data.list[6]) {
             firstCard.textContent = firstDay
-            firstIcon.innerHTML = "<img src='http://openweathermap.org/img/w/" + data.list[6].weather[0].icon + ".png'>"
+            firstIcon.innerHTML = "<img src='https://openweathermap.org/img/w/" + data.list[6].weather[0].icon + ".png'>"
             firstTemp.textContent = "Temp: " + data.list[6].main.temp
             firstHumidity.textContent = "Humidity: " + data.list[6].main.humidity
         }
     
         if (data.list[14]) {
             secondCard.textContent = secondDay
-            secondIcon.innerHTML = "<img src='http://openweathermap.org/img/w/" + data.list[14].weather[0].icon + ".png'>"
+            secondIcon.innerHTML = "<img src='https://openweathermap.org/img/w/" + data.list[14].weather[0].icon + ".png'>"
             secondTemp.textContent = "Temp: " + data.list[14].main.temp
             secondHumidity.textContent = "Humidity: " + data.list[14].main.humidity
         }
     
         if (data.list[22]) {
             thirdCard.textContent = thirdDay
-            thirdIcon.innerHTML = "<img src='http://openweathermap.org/img/w/" + data.list[22].weather[0].icon + ".png'>"
+            thirdIcon.innerHTML = "<img src='https://openweathermap.org/img/w/" + data.list[22].weather[0].icon + ".png'>"
             thirdTemp.textContent = "Temp: " + data.list[22].main.temp
             thirdHumidity.textContent = "Humidity: " + data.list[22].main.humidity
         }
     
         if (data.list[30]) {
             forthCard.textContent = forthDay
-            forthIcon.innerHTML = "<img src='http://openweathermap.org/img/w/" + data.list[30].weather[0].icon + ".png'>"
+            forthIcon.innerHTML = "<img src='https://openweathermap.org/img/w/" + data.list[30].weather[0].icon + ".png'>"
             forthTemp.textContent = "Temp: " + data.list[30].main.temp
             forthHumidity.textContent = "Humidity: " + data.list[30].main.humidity
         }
     
         if (data.list[38]) {
             fifthCard.textContent = fifthDay
-            fifthIcon.innerHTML = "<img src='http://openweathermap.org/img/w/" + data.list[38].weather[0].icon + ".png'>"
+            fifthIcon.innerHTML = "<img src='https://openweathermap.org/img/w/" + data.list[38].weather[0].icon + ".png'>"
             fifthTemp.textContent = "Temp: " + data.list[38].main.temp
             fifthHumidity.textContent = "Humidity: " + data.list[38].main.humidity
         }
