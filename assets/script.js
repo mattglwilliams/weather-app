@@ -39,6 +39,8 @@ var fifthHumidity = document.querySelector(".fifth-humidity")
 var cityBtns = document.querySelector(".city-buttons")
 var cityBtn = document.querySelector("city-btn")
 
+var cities = []
+
 var formSubmitHandler = function (event) {
     event.preventDefault();
 
@@ -217,3 +219,4 @@ submitBtn.addEventListener('click', function(event) {
 });
 
 init()
+
