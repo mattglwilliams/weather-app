@@ -10,13 +10,97 @@
     rel="stylesheet"
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
     crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./assets/style.css">
     <title>Weather App</title>
 </head>
 
 <body>
+    <div class="header card-body text-center text-white">
+      <h1>Weather Dashboard</h1>
+    </div>
+  
+    <div class="container">
+      <div class="row">
+        <div class="col-3">
+          <form class="form-line d-grid gap-2 city-form">
+            <label for="" class="form-label search-label">Search for a City:</label>
+            <input type="text" class="form-control city" id="city" placeholder="Enter city here">
+            <button class="btn btn-primary btn-block submit-button" type="submit">Search</button>
+          </form>
+          <div>
+            <hr class="dropdown-divider">
+          </div>
+          <div class="d-grid gap-2 city-buttons">
+          </div>
+        </div>
+        <div class="col-9">
+          <div class="row today">
+            <div class="col-12">
+              <h3 class="todays-city"></h3>
+              <div class="todays-icon"></div>
+              <p class="todays-temp"></p>
+              <p class="todays-wind"></p>
+              <p class="todays-humidity"></p>
+              <p class="todays-uv-index"></p>
+            </div>
+          </div>
+          <div class="forecast-header"></div>
+          <div class="row-12 d-flex justify-content-between forecast-container">
+            <div class="col-sm-2">
+              <div class="card day-one">
+                <div class="card-body">
+                  <h5 class="card-title first-card"></h5>
+                  <div class="first-icon"></div>
+                  <div class="card-text first-temp"></div>
+                  <div class="card-text first-humidity"></div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-2">
+              <div class="card day-two">
+                <div class="card-body">
+                  <h5 class="card-title second-card"></h5>
+                  <div class="second-icon"></div>
+                  <div class="card-text second-temp"></div>
+                  <div class="card-text second-humidity"></div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-2">
+              <div class="card day-three">
+                <div class="card-body">
+                  <h5 class="card-title third-card"></h5>
+                  <div class="third-icon"></div>
+                  <div class="card-text third-temp"></div>
+                  <div class="card-text third-humidity"></div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-2">
+              <div class="card day-four">
+                <div class="card-body">
+                  <h5 class="card-title forth-card"></h5>
+                  <div class="forth-icon"></div>
+                  <div class="card-text forth-temp"></div>
+                  <div class="card-text forth-humidity"></div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-2">
+              <div class="card day-five">
+                <div class="card-body">
+                  <h5 class="card-title fifth-card"></h5>
+                  <div class="fifth-icon"></div>
+                  <div class="card-text fifth-temp"></div>
+                  <div class="card-text fifth-humidity"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="script.js" defer></script>
 </body>
