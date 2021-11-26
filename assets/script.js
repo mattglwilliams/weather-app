@@ -62,14 +62,14 @@ var fetchWeather = function (city) {
             if (response.ok) {
                 response.json().then(function (data) {
                     displayWeather(data, city);
-                  });
+                });
             } else {
                 alert('Error: ' + response.statusText)
             }
         })
         .catch(function (error) {
             alert('Please select a valid city');
-          });
+        });
 }
 
 var displayWeather = function (data, city) {
@@ -95,30 +95,30 @@ var uvIndex = function (lat, lon) {
             if (response.ok) {
                 response.json().then(function (data) {
                     todaysUV.textContent = "UV Index = " + data.value
+                })
+                    .catch(function (error) {
+                        console.log('No UV Data');
+                    });
+            }
         })
-        .catch(function (error) {
-            console.log('No UV Data');
-          });
-    }
-})
 }
 
 var fetchForecast = function (city) {
     var forecastApiURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=84c00db9e01356b453b2190ad1be323f"
 
     fetch(forecastApiURL)
-    .then(function (response) {
-        if (response.ok) {
-            response.json().then(function (data) {
-                displayForecast(data);
-              });
-        } else {
-            alert('Error: ' + response.statusText)
-        }
-    })
-    .catch(function (error) {
-        alert('Please select a valid city');
-      });
+        .then(function (response) {
+            if (response.ok) {
+                response.json().then(function (data) {
+                    displayForecast(data);
+                });
+            } else {
+                alert('Error: ' + response.statusText)
+            }
+        })
+        .catch(function (error) {
+            alert('Please select a valid city');
+        });
 }
 
 var displayForecast = function (data) {
@@ -134,41 +134,41 @@ var displayForecast = function (data) {
     dayThree.setAttribute("class", "individual-forecast")
     dayFour.setAttribute("class", "individual-forecast")
     dayFive.setAttribute("class", "individual-forecast")
-        if (data.list[6]) {
-            firstCard.textContent = firstDay
-            firstIcon.innerHTML = "<img src='https://openweathermap.org/img/w/" + data.list[6].weather[0].icon + ".png'>"
-            firstTemp.textContent = "Temp: " + data.list[6].main.temp
-            firstHumidity.textContent = "Humidity: " + data.list[6].main.humidity
-        }
-    
-        if (data.list[14]) {
-            secondCard.textContent = secondDay
-            secondIcon.innerHTML = "<img src='https://openweathermap.org/img/w/" + data.list[14].weather[0].icon + ".png'>"
-            secondTemp.textContent = "Temp: " + data.list[14].main.temp
-            secondHumidity.textContent = "Humidity: " + data.list[14].main.humidity
-        }
-    
-        if (data.list[22]) {
-            thirdCard.textContent = thirdDay
-            thirdIcon.innerHTML = "<img src='https://openweathermap.org/img/w/" + data.list[22].weather[0].icon + ".png'>"
-            thirdTemp.textContent = "Temp: " + data.list[22].main.temp
-            thirdHumidity.textContent = "Humidity: " + data.list[22].main.humidity
-        }
-    
-        if (data.list[30]) {
-            forthCard.textContent = forthDay
-            forthIcon.innerHTML = "<img src='https://openweathermap.org/img/w/" + data.list[30].weather[0].icon + ".png'>"
-            forthTemp.textContent = "Temp: " + data.list[30].main.temp
-            forthHumidity.textContent = "Humidity: " + data.list[30].main.humidity
-        }
-    
-        if (data.list[38]) {
-            fifthCard.textContent = fifthDay
-            fifthIcon.innerHTML = "<img src='https://openweathermap.org/img/w/" + data.list[38].weather[0].icon + ".png'>"
-            fifthTemp.textContent = "Temp: " + data.list[38].main.temp
-            fifthHumidity.textContent = "Humidity: " + data.list[38].main.humidity
-        }
-        
+    if (data.list[6]) {
+        firstCard.textContent = firstDay
+        firstIcon.innerHTML = "<img src='https://openweathermap.org/img/w/" + data.list[6].weather[0].icon + ".png'>"
+        firstTemp.textContent = "Temp: " + data.list[6].main.temp
+        firstHumidity.textContent = "Humidity: " + data.list[6].main.humidity
+    }
+
+    if (data.list[14]) {
+        secondCard.textContent = secondDay
+        secondIcon.innerHTML = "<img src='https://openweathermap.org/img/w/" + data.list[14].weather[0].icon + ".png'>"
+        secondTemp.textContent = "Temp: " + data.list[14].main.temp
+        secondHumidity.textContent = "Humidity: " + data.list[14].main.humidity
+    }
+
+    if (data.list[22]) {
+        thirdCard.textContent = thirdDay
+        thirdIcon.innerHTML = "<img src='https://openweathermap.org/img/w/" + data.list[22].weather[0].icon + ".png'>"
+        thirdTemp.textContent = "Temp: " + data.list[22].main.temp
+        thirdHumidity.textContent = "Humidity: " + data.list[22].main.humidity
+    }
+
+    if (data.list[30]) {
+        forthCard.textContent = forthDay
+        forthIcon.innerHTML = "<img src='https://openweathermap.org/img/w/" + data.list[30].weather[0].icon + ".png'>"
+        forthTemp.textContent = "Temp: " + data.list[30].main.temp
+        forthHumidity.textContent = "Humidity: " + data.list[30].main.humidity
+    }
+
+    if (data.list[38]) {
+        fifthCard.textContent = fifthDay
+        fifthIcon.innerHTML = "<img src='https://openweathermap.org/img/w/" + data.list[38].weather[0].icon + ".png'>"
+        fifthTemp.textContent = "Temp: " + data.list[38].main.temp
+        fifthHumidity.textContent = "Humidity: " + data.list[38].main.humidity
+    }
+
 }
 
 submitBtn.addEventListener('click', formSubmitHandler);
@@ -176,7 +176,7 @@ submitBtn.addEventListener('click', formSubmitHandler);
 function renderCities() {
     cityBtns.innerHTML = "";
 
-    for (var i = 0; i < cities.length; i++){
+    for (var i = 0; i < cities.length; i++) {
         var city = cities[i];
 
         var cityBtn = document.createElement("button")
@@ -193,44 +193,43 @@ function init() {
 
     if (storedCities !== null) {
         cities = storedCities;
-      }
+    }
 
-      renderCities();
+    renderCities();
+
+    document.addEventListener('click', function (event) {
+        event.preventDefault();
+        if (event.target && event.target.closest('.city-btn')) {
+            var city = event.target.value;
+
+            if (city !== null) {
+                fetchWeather(city);
+                fetchForecast(city);
+            } else {
+                console.log("error")
+            }
+        }
+    })
 }
 
 function storeCities() {
     localStorage.setItem("cities", JSON.stringify(cities));
 }
 
-submitBtn.addEventListener('click', function(event) {
+submitBtn.addEventListener('click', function (event) {
     event.preventDefault();
 
     var chosenCity = cityInput.value.trim();
 
     if (chosenCity === "") {
         return;
-      }
+    }
 
-      cities.push(chosenCity)
-      cityInput.value = "";
+    cities.push(chosenCity)
+    cityInput.value = "";
 
-      storeCities();
-      renderCities();
+    storeCities();
+    renderCities();
 });
 
 init()
-
-if (cityBtn) {
-    cityBtn.addEventListener('click', function(event) {
-        event.preventDefault();
-    
-        var city = cityBtn.value;
-    
-        if (city !== null) {
-            fetchWeather(city);
-            fetchForecast(city);
-        } else {
-            console.log("error")
-        }
-    })
-}
