@@ -19,3 +19,32 @@
 .card {
     border: none;
 }
+
+.current-day {
+    margin: 2% 0 0 0;
+    padding: 2% 0 0 2%; 
+    border: solid 1px black;
+}
+
+.forecast-container {
+    margin: 2% 0 0 0;
+}
+
+.individual-forecast {
+    background-color: #7e41e0;
+    color: white;
+}
+
+.forecast-item {
+    display: inline;
+}
+
+.card-text {
+    margin-bottom: 5%;
+}
+
+.forecast-header {
+    margin-top: 2%;
+    font-style: strong;
+    font-size: 2em;
+}
