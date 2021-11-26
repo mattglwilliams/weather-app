@@ -38,3 +38,51 @@ var fifthHumidity = document.querySelector(".fifth-humidity")
 
 var cityBtns = document.querySelector(".city-buttons")
 var cityBtn = document.querySelector("city-btn")
+
+var formSubmitHandler = function (event) {
+    event.preventDefault();
+
+    var city = cityInput.value.trim();
+
+    if (city) {
+        fetchWeather(city);
+        fetchForecast(city);
+    } else {
+        alert("Please enter a city name")
+    }
+}
+
+var fetchWeather = function (city) {
+    var currentApiURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=84c00db9e01356b453b2190ad1be323f"
+
+    fetch(currentApiURL)
+        .then(function (response) {
+            if (response.ok) {
+                response.json().then(function (data) {
+                    displayWeather(data, city);
+                  });
+            } else {
+                alert('Error: ' + response.statusText)
+            }
+        })
+        .catch(function (error) {
+            alert('Please select a valid city');
+          });
+}
+
+var displayWeather = function (data, city) {
+    console.log(data)
+    var today = moment().format("DD/MM/YYYY");
+    var temp = data.main.temp;
+    var wind = data.wind.speed;
+    var humidity = data.main.humidity;
+    todaysEl.setAttribute("class", "current-day")
+    cityName.textContent = data.name + " - " + today
+    todaysIcon.innerHTML = "<img src='http://openweathermap.org/img/w/" + data.weather[0].icon + ".png'>"
+    todaysTemp.textContent = "Temp: " + temp;
+    todaysWind.textContent = "Wind Speed: " + wind;
+    todaysHumidity.textContent = "Humidity: " + humidity;
+    uvIndex(data.coord.lat, data.coord.lon);
+}
+
+submitBtn.addEventListener('click', formSubmitHandler);
