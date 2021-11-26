@@ -192,14 +192,14 @@ function init() {
     var storedCities = JSON.parse(localStorage.getItem("cities"));
 
     if (storedCities !== null) {
-        citiesArray = storedCities;
+        cities = storedCities;
       }
 
       renderCities();
 }
 
 function storeCities() {
-    localStorage.setItem("cities", JSON.stringify(citiesArray));
+    localStorage.setItem("cities", JSON.stringify(cities));
 }
 
 submitBtn.addEventListener('click', function(event) {
