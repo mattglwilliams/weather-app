@@ -22,22 +22,27 @@ var dayFive = document.querySelector(".day-five")
 var firstCard = document.querySelector(".first-card")
 var firstIcon = document.querySelector(".first-icon")
 var firstTemp = document.querySelector(".first-temp")
+var firstWind = document.querySelector(".first-wind")
 var firstHumidity = document.querySelector(".first-humidity")
 var secondCard = document.querySelector(".second-card")
 var secondIcon = document.querySelector(".second-icon")
 var secondTemp = document.querySelector(".second-temp")
+var secondWind = document.querySelector(".second-wind")
 var secondHumidity = document.querySelector(".second-humidity")
 var thirdCard = document.querySelector(".third-card")
 var thirdIcon = document.querySelector(".third-icon")
 var thirdTemp = document.querySelector(".third-temp")
+var thirdWind = document.querySelector(".third-wind")
 var thirdHumidity = document.querySelector(".third-humidity")
 var forthCard = document.querySelector(".forth-card")
 var forthIcon = document.querySelector(".forth-icon")
 var forthTemp = document.querySelector(".forth-temp")
+var forthWind = document.querySelector(".forth-wind")
 var forthHumidity = document.querySelector(".forth-humidity")
 var fifthCard = document.querySelector(".fifth-card")
 var fifthIcon = document.querySelector(".fifth-icon")
 var fifthTemp = document.querySelector(".fifth-temp")
+var fifthWind = document.querySelector(".fifth-wind")
 var fifthHumidity = document.querySelector(".fifth-humidity")
 
 // DOM elements for the saved city buttons
@@ -164,6 +169,7 @@ var displayForecast = function (data) {
         firstCard.textContent = firstDay
         firstIcon.innerHTML = "<img src='https://openweathermap.org/img/w/" + data.list[6].weather[0].icon + ".png'>"
         firstTemp.textContent = "Temp: " + data.list[6].main.temp
+        firstWind.textContent = "Wind Speed: " + data.list[6].wind.speed
         firstHumidity.textContent = "Humidity: " + data.list[6].main.humidity
     }
 
@@ -171,6 +177,7 @@ var displayForecast = function (data) {
         secondCard.textContent = secondDay
         secondIcon.innerHTML = "<img src='https://openweathermap.org/img/w/" + data.list[14].weather[0].icon + ".png'>"
         secondTemp.textContent = "Temp: " + data.list[14].main.temp
+        secondWind.textContent = "Wind Speed: " + data.list[14].wind.speed
         secondHumidity.textContent = "Humidity: " + data.list[14].main.humidity
     }
 
@@ -178,6 +185,7 @@ var displayForecast = function (data) {
         thirdCard.textContent = thirdDay
         thirdIcon.innerHTML = "<img src='https://openweathermap.org/img/w/" + data.list[22].weather[0].icon + ".png'>"
         thirdTemp.textContent = "Temp: " + data.list[22].main.temp
+        thirdWind.textContent = "Wind Speed: " + data.list[22].wind.speed
         thirdHumidity.textContent = "Humidity: " + data.list[22].main.humidity
     }
 
@@ -185,6 +193,7 @@ var displayForecast = function (data) {
         forthCard.textContent = forthDay
         forthIcon.innerHTML = "<img src='https://openweathermap.org/img/w/" + data.list[30].weather[0].icon + ".png'>"
         forthTemp.textContent = "Temp: " + data.list[30].main.temp
+        forthWind.textContent = "Wind Speed: " + data.list[30].wind.speed
         forthHumidity.textContent = "Humidity: " + data.list[30].main.humidity
     }
 
@@ -192,6 +201,7 @@ var displayForecast = function (data) {
         fifthCard.textContent = fifthDay
         fifthIcon.innerHTML = "<img src='https://openweathermap.org/img/w/" + data.list[38].weather[0].icon + ".png'>"
         fifthTemp.textContent = "Temp: " + data.list[38].main.temp
+        fifthWind.textContent = "Wind Speed: " + data.list[38].wind.speed
         fifthHumidity.textContent = "Humidity: " + data.list[38].main.humidity
     }
 
