@@ -127,7 +127,7 @@ var uvIndex = function (lat, lon) {
                         todaysUV.setAttribute("class", "med-uv")
                     } else if (data.value < 7) {
                         todaysUV.setAttribute("class", "high-uv")
-                    } else {
+                    } else if (data.value > 7.1) {
                         todaysUV.setAttribute("class", "extr-uv")
                     }
                 })
