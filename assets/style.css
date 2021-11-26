@@ -50,17 +50,21 @@
 }
 
 .low-uv {
-    background-color: green;
+    background-color: lightgreen;
+    width: fit-content;
 }
 
 .med-uv {
     background-color: yellow;
+    width: fit-content;
 }
 
 .high-uv {
     background-color: orange;
+    width: fit-content;
 }
 
 .extr-uv {
     background-color: red;
+    width: fit-content;
 }
