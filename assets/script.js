@@ -170,3 +170,50 @@ var displayForecast = function (data) {
 }
 
 submitBtn.addEventListener('click', formSubmitHandler);
+
+function renderCities() {
+    cityBtns.innerHTML = "";
+
+    for (var i = 0; i < cities.length; i++){
+        var city = cities[i];
+
+        var cityBtn = document.createElement("button")
+        cityBtn.textContent = city;
+        cityBtn.setAttribute("class", "btn btn-info btn-block city-btn");
+        cityBtn.setAttribute("value", city);
+
+        cityBtns.appendChild(cityBtn);
+    }
+}
+
+function init() {
+    var storedCities = JSON.parse(localStorage.getItem("cities"));
+
+    if (storedCities !== null) {
+        citiesArray = storedCities;
+      }
+
+      renderCities();
+}
+
+function storeCities() {
+    localStorage.setItem("cities", JSON.stringify(citiesArray));
+}
+
+submitBtn.addEventListener('click', function(event) {
+    event.preventDefault();
+
+    var chosenCity = cityInput.value.trim();
+
+    if (chosenCity === "") {
+        return;
+      }
+
+      cities.push(chosenCity)
+      cityInput.value = "";
+
+      storeCities();
+      renderCities();
+});
+
+init()
