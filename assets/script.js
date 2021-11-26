@@ -85,4 +85,20 @@ var displayWeather = function (data, city) {
     uvIndex(data.coord.lat, data.coord.lon);
 }
 
+var uvIndex = function (lat, lon) {
+    var getUvIndex = "https://api.openweathermap.org/data/2.5/uvi?lat=" + lat + "&lon=" + lon + "&appid=84c00db9e01356b453b2190ad1be323f";
+
+    fetch(getUvIndex)
+        .then(function (response) {
+            if (response.ok) {
+                response.json().then(function (data) {
+                    todaysUV.textContent = "UV Index = " + data.value
+        })
+        .catch(function (error) {
+            console.log('No UV Data');
+          });
+    }
+})
+}
+
 submitBtn.addEventListener('click', formSubmitHandler);
