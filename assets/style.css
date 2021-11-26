@@ -48,3 +48,19 @@
     font-style: strong;
     font-size: 2em;
 }
+
+.low-uv {
+    background-color: green;
+}
+
+.med-uv {
+    background-color: yellow;
+}
+
+.high-uv {
+    background-color: orange;
+}
+
+.extr-uv {
+    background-color: red;
+}

@@ -121,6 +121,15 @@ var uvIndex = function (lat, lon) {
             if (response.ok) {
                 response.json().then(function (data) {
                     todaysUV.textContent = "UV Index = " + data.value
+                    if (data.value < 2) {
+                        todaysUV.tribute("class", "low-uv")
+                    } else if (data.value < 5) {
+                        todaysUV.tribute("class", "med-uv")
+                    } else if (data.value < 7) {
+                        todaysUV.tribute("class", "high-uv")
+                    } else if (data.value < 10) {
+                        todaysUV.tribute("class", "extr-uv")
+                    }
                 })
                     .catch(function (error) {
                         console.log('No UV Data');
