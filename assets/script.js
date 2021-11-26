@@ -220,3 +220,17 @@ submitBtn.addEventListener('click', function(event) {
 
 init()
 
+if (cityBtn) {
+    cityBtn.addEventListener('click', function(event) {
+        event.preventDefault();
+    
+        var city = cityBtn.value;
+    
+        if (city !== null) {
+            fetchWeather(city);
+            fetchForecast(city);
+        } else {
+            console.log("error")
+        }
+    })
+}
