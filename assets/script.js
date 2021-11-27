@@ -232,7 +232,7 @@ function renderCities() {
         cityBtns.appendChild(cityBtn);
     }
 }
-// This function gets the item from local storage and if there are any runds the renderCities function.
+// This function gets the item from local storage and if there are any, it runs the renderCities function.
 function init() {
     var storedCities = JSON.parse(localStorage.getItem("cities"));
 
