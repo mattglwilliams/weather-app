@@ -34,6 +34,7 @@
     background-image: linear-gradient(to top, #ae87ec, #4d00c8);
     border-radius: 8%;
     color: white;
+    box-shadow: 10px 10px #cecece;
 }
 
 .forecast-item {
@@ -53,19 +54,24 @@
 .low-uv {
     background-color: lightgreen;
     width: fit-content;
+    padding: 0.3em;
+    border-radius: 1em;
 }
 
 .med-uv {
     background-color: yellow;
     width: fit-content;
+    padding: 0.3em
 }
 
 .high-uv {
     background-color: orange;
     width: fit-content;
+    padding: 0.5em
 }
 
 .extr-uv {
     background-color: red;
     width: fit-content;
+    padding: 0.5em
 }
