@@ -7,7 +7,7 @@
 }
 
 .header {
-    background-image: linear-gradient(to right, #ccbae9, #5a08df);;
+    background-image: linear-gradient(to right, #ccbae9, #5a08df);
 }
 
 .search-label {
@@ -31,7 +31,8 @@
 }
 
 .individual-forecast {
-    background-color: #7e41e0;
+    background-image: linear-gradient(to top, #bda1eb, #5a08df);
+    border-radius: 8%;
     color: white;
 }
 
